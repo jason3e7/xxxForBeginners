@@ -50,12 +50,12 @@
 				}
 			}
 
-			var filename = GetURLParameter('filename');
-			if (filename != undefined) {
+			var name = GetURLParameter('name');
+			if (name != undefined) {
 				var mdTop = '<section data-markdown><script type="text/template">';
 				var mdBottom = '<\/script></section>';
 				var mdMiddle = mdBottom + mdTop;
-				$.get( filename + ".md", function( data ) {
+				$.get( name + "/index.md", function( data ) {
 					var title = data.match(/Note:title:"(.*)"/);
 					if(title == null) {
 						title = "Title";
